@@ -42,8 +42,8 @@ async def on_ready():
   bot.load_extension("cogs.config")
   bot.load_extension("cogs.fun")
   bot.load_extension("cogs.info")
+  bot.load_extension("cogs.dogelore")
   print("cogs loaded")
-  print(db["694470208315719750"])
 
 @bot.event
 async def on_guild_join(guild):

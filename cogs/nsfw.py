@@ -15,10 +15,11 @@ class nsfw(commands.Cog):
     nsfwDB = db[str(ctx.guild.id)]
     if nsfwDB["nsfw"]:
       if ctx.channel.is_nsfw():
-        data = requests.get(f"https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags={search}")
-        dataDict = json.loads(data.text)
-          
-        await ctx.send(dataDict["file_url"])
+        data = requests.get(f"https://r34-json-api.herokuapp.com/posts?tags={search}")
+        dataList = json.loads(data.text)
+        fileUrl = dataList[random.randint(0, len(dataList) - 1)]["file_url"]
+
+        await ctx.send(fileUrl)
 
       else:
         await ctx.send("This isn't an NSFW channel!")
