@@ -8,6 +8,13 @@ authors = ["Your Name <you@example.com>"]
 python = "^3.8"
 discord = "^1.0.1"
 replit = "^3.0.0"
+discord-py-slash-command = "^1.2.2"
+discord-components = "^0.5.3"
+numpy = "^1.20.3"
+pygicord = "^0.5.0"
+flask = "^2.0.1"  
+matplotlib = "^3.4.2"
+flask-discord = "^0.1.64"
 
 [tool.poetry.dev-dependencies]
 

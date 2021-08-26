@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Patser's Mommy</title>
+    <link rel="shortcut icon" type="image/ico" href="/static/sumi.ico"/>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="TopBar">
+      <div class="NavBar">
+        <img src="/static/sumi.ico" class="Logo">
+        <a href="/">Home</a>
+        <a href="/stats/">Statistics</a>
+        <a href="/dashboard/">Dashboard</a>
+        <a href="/profile/">Profile</a>
+      </div>
+      <div class="UserBar">
+        {% if loggedIn is true %}
+          <img src="{{avatar}}">
+          <a class="UserLink" href="/profile/">{{name}}</a>
+          <a class="UserButton" href="/logout/">Logout</a>
+        {% endif %}
+        {% if loggedIn is false %}
+          <a class="UserButton" href="/login/">Login</a>
+        {% endif %}
+      </div>
+    </div>
+    <img src="/static/sumi.png" class="BigLogo">
+    <h1 class="PageHeader">Patser's Mommy</h1>
+  </body>
+</html>

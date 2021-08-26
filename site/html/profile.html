@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Patser's Mommy | Profile</title>
+    <link rel="shortcut icon" type="image/ico" href="/static/sumi.ico"/>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="TopBar">
+      <div class="NavBar">
+        <img src="/static/sumi.ico" class="Logo">
+        <a href="/">Home</a>
+        <a href="/stats/">Statistics</a>
+        <a href="/dashboard/">Dashboard</a>
+        <a href="/profile/">Profile</a>
+      </div>
+      <div class="UserBar">
+        {% if loggedIn is true %}
+          <img src="{{avatar}}">
+          <a class="UserLink" href="/profile/">{{name}}</a>
+          <a class="UserButton" href="/logout/">Logout</a>
+        {% endif %}
+        {% if loggedIn is false %}
+          <a class="UserButton" href="/login/">Login</a>
+        {% endif %}
+      </div>
+    </div>
+    <h1 class="PageHeader">{{name}}'s Profile</h1>
+    <div class="MainDiv">
+      <div class="SubDiv">
+        <h3 class="SubHeader">Roles</h3>
+        {% for roleInfo in profile[0] %}
+          <h5 style="color:{{roleInfo[0]}};">{{roleInfo[1]}}</h5>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
