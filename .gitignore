@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Replit stuff
+.png
+.lock
+.toml
+
+# Flask stuff:
+instance/
+.webassets-cache
