@@ -310,6 +310,7 @@ class Misc(commands.Cog):
 
       spotifyEmbed.set_author(name=f"{user.name} is listening to:", icon_url=user.avatar_url)
       spotifyEmbed.set_thumbnail(url=song.album_cover_url)
+      
       def getTime(t):
         m, s = divmod(t.seconds, 60)
         s = s if s >= 10 else f"0{s}"

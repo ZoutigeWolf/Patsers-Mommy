@@ -6,13 +6,14 @@ class defaults():
 
   spotifyColor = 0x1DB954
 
-  guildIDs = [694470208315719750, 878002011965108235]
+  guildIDs = [694470208315719750, 900693806742110220]
 
   timestamp = datetime.datetime.utcnow()
 
   dbKeys = {
     "nsfwStats": {},
-    "currentStatus": 0
+    "currentStatus": 0,
+    "xp": {}
   }
 
   statusList = [
