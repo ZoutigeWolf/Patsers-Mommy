@@ -20,8 +20,6 @@ class defaults():
     "with Patser",
     "with my milkers",
     "Africa Simulator 2021 Deluxe Edition",
-    "with Tropic\'s fat ass",
-    "Roark\'s Attack on Titan Fan Game",
     "with BBC"
   ]
 

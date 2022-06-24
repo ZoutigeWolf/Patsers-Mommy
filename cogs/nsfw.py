@@ -6,7 +6,8 @@ from discord_slash.utils.manage_commands import create_option, create_choice
 from defaults import defaults
 
 import requests
-import json
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 import random
 import datetime
 import math
@@ -57,7 +58,13 @@ class NSFW(commands.Cog):
   async def r34_search(self, ctx: SlashContext, tag):
     await ctx.defer()
 
-    r = requests.get(f"https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags={tag}")
+    session = requests.Session()
+    retry = Retry(connect=3, backoff_factor=0.5)
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+
+    r = session.get(f"https://rule34.xxx/index.php?page=dapi&s=post&q=index&tags={tag}")
 
     with open("r34.xml", "wb") as xmlFile:
       xmlFile.write(r.content)
